@@ -111,6 +111,30 @@ a {
   text-decoration: none;
 }
 
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.35s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 @media (max-width: 900px) {
   .responsive-grid-2 {
     grid-template-columns: 1fr !important;

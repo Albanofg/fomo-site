@@ -153,7 +153,7 @@ export default function FOMOSite() {
         <ul style={{ ...s.navLinks, ...(mobileNav ? s.navLinksMobile : {}) }}>
           {SECTIONS.map((sec) => (
             <li key={sec.id}>
-              <a href={`#${sec.id}`} style={s.navLink} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
+              <a href={`#${sec.id}`} className="nav-link" style={s.navLink} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
                 {sec.label}
               </a>
             </li>
