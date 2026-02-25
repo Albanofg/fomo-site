@@ -498,7 +498,7 @@ const s = {
     background: "rgba(6,8,12,0.95)", borderBottom: "1px solid var(--border)",
   },
   navLink: {
-    color: "var(--text-dim)", textDecoration: "none", fontFamily: mono,
+    textDecoration: "none", fontFamily: mono,
     fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase",
   },
   mobileToggle: {
