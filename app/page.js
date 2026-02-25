@@ -117,9 +117,38 @@ function FlowArrow({ color = "var(--accent)" }) {
   );
 }
 
+function NavLink({ href, children, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      style={{
+        ...s.navLink,
+        color: hovered ? "var(--accent)" : "var(--text-dim)",
+      }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {children}
+      <span
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: -4,
+          height: 1,
+          background: "var(--accent)",
+          width: hovered ? "100%" : "0%",
+          transition: "width 0.35s ease",
+        }}
+      />
+    </a>
+  );
+}
+
 /* ── Main Page ── */
 export default function FOMOSite() {
-  const [glitchHover, setGlitchHover] = useState(false);
+  console.log("[v0] FOMOSite rendering");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [mobileNav, setMobileNav] = useState(false);
 
@@ -150,13 +179,13 @@ export default function FOMOSite() {
         <a href="#" style={s.navLogo} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
           FOMO<span style={s.navLogoSub}>{"//"} PROTOCOL</span>
         </a>
-        <button style={s.mobileToggle} onClick={() => setMobileNav(!mobileNav)}>&#9776;</button>
+        <button className="mobile-toggle" style={s.mobileToggle} onClick={() => setMobileNav(!mobileNav)}>&#9776;</button>
         <ul style={{ ...s.navLinks, ...(mobileNav ? s.navLinksMobile : {}) }}>
           {SECTIONS.map((sec) => (
             <li key={sec.id}>
-              <a href={`#${sec.id}`} style={s.navLink} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
+              <NavLink href={`#${sec.id}`} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
                 {sec.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -178,18 +207,8 @@ export default function FOMOSite() {
             </div>
             <h1
               style={{ ...s.heroH1, animation: "fadeSlideUp 0.8s 0.4s both" }}
-              onMouseEnter={() => setGlitchHover(true)}
-              onMouseLeave={() => setGlitchHover(false)}
             >
-              <span style={{ position: "relative", display: "inline-block" }}>
-                COMPRESS
-                {glitchHover && (
-                  <>
-                    <span style={{ ...s.glitchLayer, color: "var(--accent3)", animation: "glitch1 0.3s infinite", clipPath: "inset(0 0 50% 0)" }}>COMPRESS</span>
-                    <span style={{ ...s.glitchLayer, color: "var(--accent2)", animation: "glitch2 0.3s infinite", clipPath: "inset(50% 0 0 0)" }}>COMPRESS</span>
-                  </>
-                )}
-              </span>
+              COMPRESS
               <br />
               <span style={s.outline}>LIQUIDITY.</span>
               <br />
@@ -509,8 +528,9 @@ const s = {
     background: "rgba(6,8,12,0.95)", borderBottom: "1px solid var(--border)",
   },
   navLink: {
-    color: "var(--text-dim)", textDecoration: "none", fontFamily: mono,
+    textDecoration: "none", fontFamily: mono,
     fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase",
+    position: "relative", display: "inline-block", transition: "color 0.35s ease",
   },
   mobileToggle: {
     display: "none", background: "none", border: "1px solid var(--border)",
