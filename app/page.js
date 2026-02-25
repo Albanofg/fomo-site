@@ -117,6 +117,35 @@ function FlowArrow({ color = "var(--accent)" }) {
   );
 }
 
+function NavLink({ href, children, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      style={{
+        ...s.navLink,
+        color: hovered ? "var(--accent)" : "var(--text-dim)",
+      }}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {children}
+      <span
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: -4,
+          height: 1,
+          background: "var(--accent)",
+          width: hovered ? "100%" : "0%",
+          transition: "width 0.35s ease",
+        }}
+      />
+    </a>
+  );
+}
+
 /* ── Main Page ── */
 export default function FOMOSite() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -153,9 +182,9 @@ export default function FOMOSite() {
         <ul style={{ ...s.navLinks, ...(mobileNav ? s.navLinksMobile : {}) }}>
           {SECTIONS.map((sec) => (
             <li key={sec.id}>
-              <a href={`#${sec.id}`} className="nav-link" style={s.navLink} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
+              <NavLink href={`#${sec.id}`} onClick={(e) => { e.preventDefault(); scrollTo(sec.id); }}>
                 {sec.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -500,6 +529,7 @@ const s = {
   navLink: {
     textDecoration: "none", fontFamily: mono,
     fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase",
+    position: "relative", display: "inline-block", transition: "color 0.35s ease",
   },
   mobileToggle: {
     display: "none", background: "none", border: "1px solid var(--border)",

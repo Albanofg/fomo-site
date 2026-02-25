@@ -111,32 +111,6 @@ a {
   text-decoration: none;
 }
 
-.nav-link {
-  position: relative;
-  display: inline-block;
-  color: var(--text-dim);
-  transition: color 0.4s ease;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.4s ease;
-}
-
-.nav-link:hover {
-  color: var(--accent) !important;
-  -webkit-text-fill-color: var(--accent);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
 
 @media (max-width: 900px) {
   .responsive-grid-2 {
