@@ -25,6 +25,12 @@ export const metadata = {
     "A dual-chain architecture that nets bilateral obligations at scale. No asset custody. No oracles. Pure deterministic clearing.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
