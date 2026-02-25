@@ -113,19 +113,29 @@ a {
 
 .nav-link {
   position: relative;
-  transition: color 0.3s ease;
   display: inline-block;
-  background: linear-gradient(to right, var(--accent) 50%, var(--text-dim) 50%);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background-position 0.4s ease;
+  color: var(--text-dim);
+  transition: color 0.4s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.4s ease;
 }
 
 .nav-link:hover {
-  background-position: 0 0;
+  color: var(--accent) !important;
+  -webkit-text-fill-color: var(--accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 900px) {

@@ -149,7 +149,7 @@ export default function FOMOSite() {
         <a href="#" style={s.navLogo} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
           FOMO<span style={s.navLogoSub}>{"//"} PROTOCOL</span>
         </a>
-        <button style={s.mobileToggle} onClick={() => setMobileNav(!mobileNav)}>&#9776;</button>
+        <button className="mobile-toggle" style={s.mobileToggle} onClick={() => setMobileNav(!mobileNav)}>&#9776;</button>
         <ul style={{ ...s.navLinks, ...(mobileNav ? s.navLinksMobile : {}) }}>
           {SECTIONS.map((sec) => (
             <li key={sec.id}>
