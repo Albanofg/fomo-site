@@ -1,42 +1,139 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #06080c;
+  --bg2: #0c1018;
+  --surface: #111820;
+  --border: #1a2535;
+  --accent: #00ffaa;
+  --accent2: #00ccff;
+  --accent3: #ff3366;
+  --text: #c8d6e5;
+  --text-dim: #5a6f85;
+  --white: #eaf2ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 170, 0.015) 2px,
+    rgba(0, 255, 170, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glitch1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 2px); }
+  40% { transform: translate(3px, -2px); }
+  60% { transform: translate(-2px, -1px); }
+  80% { transform: translate(2px, 1px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(3px, -2px); }
+  40% { transform: translate(-3px, 2px); }
+  60% { transform: translate(2px, 1px); }
+  80% { transform: translate(-2px, -1px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes gridShift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+@keyframes dividerSlide {
+  to { left: 200%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.chain-card:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-4px);
+}
+
+.invariant-cell:hover {
+  background: var(--surface) !important;
+}
+
+.issuance-item:hover {
+  border-left-color: var(--accent2) !important;
+  background: rgba(0, 204, 255, 0.03) !important;
+}
+
+.gov-card:hover {
+  border-color: var(--accent2) !important;
+  transform: translateY(-3px);
+}
+
+.compare-row:hover td {
+  background: rgba(0, 255, 170, 0.02) !important;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (max-width: 900px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-flex-col {
+    flex-direction: column !important;
+  }
+  .nav-desktop {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+  .nav-mobile-open {
+    display: none !important;
   }
 }
