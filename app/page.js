@@ -119,7 +119,6 @@ function FlowArrow({ color = "var(--accent)" }) {
 
 /* ── Main Page ── */
 export default function FOMOSite() {
-  const [glitchHover, setGlitchHover] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [mobileNav, setMobileNav] = useState(false);
 
@@ -178,18 +177,8 @@ export default function FOMOSite() {
             </div>
             <h1
               style={{ ...s.heroH1, animation: "fadeSlideUp 0.8s 0.4s both" }}
-              onMouseEnter={() => setGlitchHover(true)}
-              onMouseLeave={() => setGlitchHover(false)}
             >
-              <span style={{ position: "relative", display: "inline-block" }}>
-                COMPRESS
-                {glitchHover && (
-                  <>
-                    <span style={{ ...s.glitchLayer, color: "var(--accent3)", animation: "glitch1 0.3s infinite", clipPath: "inset(0 0 50% 0)" }}>COMPRESS</span>
-                    <span style={{ ...s.glitchLayer, color: "var(--accent2)", animation: "glitch2 0.3s infinite", clipPath: "inset(50% 0 0 0)" }}>COMPRESS</span>
-                  </>
-                )}
-              </span>
+              COMPRESS
               <br />
               <span style={s.outline}>LIQUIDITY.</span>
               <br />
