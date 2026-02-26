@@ -213,7 +213,7 @@ export default function FOMOSite() {
               <br />
               NET EVERYTHING.
             </h1>
-            <p style={{ ...s.heroSub, animation: "fadeSlideUp 0.8s 0.6s both", maxWidth: "52ch" }}>
+            <p style={{ ...s.heroSub, animation: "fadeSlideUp 0.8s 0.6s both" }}>
               FOMO Association is a Verein based in Zug, Switzerland. We are the stewards of a cryptographically enforced obligation network enabling issuance, control, multilateral netting, &amp; arbitration-backed enforcement of controllable electronic records &mdash; reducing gross settlement exposure &amp; liquidity needs without asset custody or transfer.
             </p>
             <div style={{ ...s.heroStats, animation: "fadeSlideUp 0.8s 0.8s both" }}>
@@ -554,7 +554,7 @@ const s = {
   },
   outline: { WebkitTextStroke: "2px var(--accent)", color: "transparent" },
   glitchLayer: { position: "absolute", top: 0, left: 0, width: "100%", height: "100%" },
-  heroSub: { fontSize: "1.15rem", color: "var(--text)", maxWidth: 600, marginBottom: "2.5rem" },
+  heroSub: { fontSize: "clamp(1.2rem, 3vw, 2.2rem)", color: "var(--text)", maxWidth: "55ch", marginBottom: "2.5rem", lineHeight: 1.35 },
   heroStats: { display: "flex", gap: "3rem", flexWrap: "wrap", marginBottom: "1rem" },
   heroStat: { borderLeft: "2px solid var(--accent)", paddingLeft: "1rem" },
   statNumber: { fontFamily: display, fontSize: "2.5rem", color: "var(--white)", lineHeight: 1 },
