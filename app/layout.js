@@ -24,7 +24,7 @@ export const metadata = {
   description:
     "A dual-chain architecture that nets bilateral obligations at scale. No asset custody. No oracles. Pure deterministic clearing.",
   icons: {
-    icon: "/favicon.png",
+    icon: "https://assets.cdn.filesafe.space/5ya1nbDzQTewNPkBCOeE/media/69a038e4040fbb74655ad5b7.png",
   },
 };
 
