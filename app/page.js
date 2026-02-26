@@ -213,8 +213,8 @@ export default function FOMOSite() {
               <br />
               NET EVERYTHING.
             </h1>
-            <p style={{ ...s.heroSub, animation: "fadeSlideUp 0.8s 0.6s both" }}>
-              A dual-chain architecture that nets bilateral obligations at scale. No asset custody. No oracles. Pure deterministic clearing.
+            <p style={{ ...s.heroSub, animation: "fadeSlideUp 0.8s 0.6s both", maxWidth: "52ch" }}>
+              FOMO Association is a Verein based in Zug, Switzerland. We are the stewards of a cryptographically enforced obligation network enabling issuance, control, multilateral netting, &amp; arbitration-backed enforcement of controllable electronic records &mdash; reducing gross settlement exposure &amp; liquidity needs without asset custody or transfer.
             </p>
             <div style={{ ...s.heroStats, animation: "fadeSlideUp 0.8s 0.8s both" }}>
               {[
@@ -462,8 +462,7 @@ export default function FOMOSite() {
           </Reveal>
           <Reveal delay={0.2}>
             <div style={s.ctaButtons}>
-              <a href="#" style={s.btnPrimary}>Read Whitepaper &rarr;</a>
-              <a href="#" style={s.btnOutline}>Join Community</a>
+              <a href="#" style={{ ...s.btnPrimary, padding: "1.1rem 3.5rem", fontSize: "1rem" }}>Request Membership &rarr;</a>
             </div>
           </Reveal>
         </div>
