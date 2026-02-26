@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+/* ── Design tokens ── */
 :root {
   --bg: #06080c;
   --bg2: #0c1018;
@@ -11,12 +14,27 @@
   --white: #eaf2ff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ── Tailwind theme ── */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+  --color-accent3: var(--accent3);
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-white: var(--white);
+
+  --font-body: var(--nf-body), "Chakra Petch", sans-serif;
+  --font-mono: var(--nf-mono), "JetBrains Mono", monospace;
+  --font-display: var(--nf-display), "Bebas Neue", sans-serif;
+
+  --breakpoint-nav: 56.25rem;
 }
 
+/* ── Base styles ── */
 html {
   scroll-behavior: smooth;
 }
@@ -41,6 +59,7 @@ body::before {
   z-index: 9998;
 }
 
+/* ── Keyframe animations ── */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -82,59 +101,4 @@ body::before {
 @keyframes pulse {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
-}
-
-.chain-card:hover {
-  border-color: var(--accent) !important;
-  transform: translateY(-4px);
-}
-
-.invariant-cell:hover {
-  background: var(--surface) !important;
-}
-
-.issuance-item:hover {
-  border-left-color: var(--accent2) !important;
-  background: rgba(0, 204, 255, 0.03) !important;
-}
-
-.gov-card:hover {
-  border-color: var(--accent2) !important;
-  transform: translateY(-3px);
-}
-
-.compare-row:hover td {
-  background: rgba(0, 255, 170, 0.02) !important;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-@media (max-width: 900px) {
-  .responsive-grid-2 {
-    grid-template-columns: 1fr !important;
-  }
-  .responsive-grid-3 {
-    grid-template-columns: 1fr !important;
-  }
-  .responsive-flex-col {
-    flex-direction: column !important;
-  }
-  .nav-desktop {
-    display: none !important;
-  }
-  .mobile-toggle {
-    display: flex !important;
-  }
-}
-
-@media (min-width: 901px) {
-  .mobile-toggle {
-    display: none !important;
-  }
-  .nav-mobile-open {
-    display: none !important;
-  }
 }

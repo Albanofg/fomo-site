@@ -3,19 +3,19 @@ import "./globals.css";
 
 
 const chakraPetch = Chakra_Petch({
-  variable: "--font-body",
+  variable: "--nf-body",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+  variable: "--nf-mono",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
 const bebasNeue = Bebas_Neue({
-  variable: "--font-display",
+  variable: "--nf-display",
   subsets: ["latin"],
   weight: "400",
 });
