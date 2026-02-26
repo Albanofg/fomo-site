@@ -537,7 +537,7 @@ const s = {
   },
 
   // Hero
-  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "5rem", paddingBottom: "5rem" },
+  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "8rem", paddingBottom: "5rem" },
   heroGlow: {
     position: "absolute", top: "20%", right: "-10%", width: 700, height: 700,
     background: "radial-gradient(circle, rgba(0,255,170,0.08) 0%, transparent 70%)",
