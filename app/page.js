@@ -537,7 +537,7 @@ const s = {
   },
 
   // Hero
-  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "5rem" },
+  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "5rem", paddingBottom: "5rem" },
   heroGlow: {
     position: "absolute", top: "20%", right: "-10%", width: 700, height: 700,
     background: "radial-gradient(circle, rgba(0,255,170,0.08) 0%, transparent 70%)",
@@ -555,7 +555,7 @@ const s = {
   outline: { WebkitTextStroke: "2px var(--accent)", color: "transparent" },
   glitchLayer: { position: "absolute", top: 0, left: 0, width: "100%", height: "100%" },
   heroSub: { fontSize: "1.15rem", color: "var(--text)", maxWidth: 600, marginBottom: "2.5rem" },
-  heroStats: { display: "flex", gap: "3rem", flexWrap: "wrap" },
+  heroStats: { display: "flex", gap: "3rem", flexWrap: "wrap", marginBottom: "1rem" },
   heroStat: { borderLeft: "2px solid var(--accent)", paddingLeft: "1rem" },
   statNumber: { fontFamily: display, fontSize: "2.5rem", color: "var(--white)", lineHeight: 1 },
   statLabel: { fontFamily: mono, fontSize: "0.65rem", color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: "0.15em" },
