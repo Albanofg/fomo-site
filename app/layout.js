@@ -1,6 +1,7 @@
 import { Chakra_Petch, JetBrains_Mono, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
+
 const chakraPetch = Chakra_Petch({
   variable: "--font-body",
   subsets: ["latin"],

@@ -148,7 +148,6 @@ function NavLink({ href, children, onClick }) {
 
 /* ── Main Page ── */
 export default function FOMOSite() {
-  console.log("[v0] FOMOSite rendering");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [mobileNav, setMobileNav] = useState(false);
 
