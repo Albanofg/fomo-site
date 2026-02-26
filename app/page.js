@@ -214,7 +214,7 @@ export default function FOMOSite() {
               NET EVERYTHING.
             </h1>
             <p style={{ ...s.heroSub, animation: "fadeSlideUp 0.8s 0.6s both" }}>
-              A dual-chain architecture that nets bilateral obligations at scale. No asset custody. No oracles. Pure deterministic clearing.
+              FOMO Association is a Verein based in Zug, Switzerland. We are the stewards of a cryptographically enforced obligation network enabling issuance, control, multilateral netting, &amp; arbitration-backed enforcement of controllable electronic records &mdash; reducing gross settlement exposure &amp; liquidity needs without asset custody or transfer.
             </p>
             <div style={{ ...s.heroStats, animation: "fadeSlideUp 0.8s 0.8s both" }}>
               {[
@@ -462,8 +462,7 @@ export default function FOMOSite() {
           </Reveal>
           <Reveal delay={0.2}>
             <div style={s.ctaButtons}>
-              <a href="#" style={s.btnPrimary}>Read Whitepaper &rarr;</a>
-              <a href="#" style={s.btnOutline}>Join Community</a>
+              <a href="#" style={{ ...s.btnPrimary, padding: "1.1rem 3.5rem", fontSize: "1rem" }}>Request Membership &rarr;</a>
             </div>
           </Reveal>
         </div>
@@ -538,7 +537,7 @@ const s = {
   },
 
   // Hero
-  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "5rem" },
+  hero: { minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: "8rem", paddingBottom: "5rem" },
   heroGlow: {
     position: "absolute", top: "20%", right: "-10%", width: 700, height: 700,
     background: "radial-gradient(circle, rgba(0,255,170,0.08) 0%, transparent 70%)",
@@ -555,8 +554,8 @@ const s = {
   },
   outline: { WebkitTextStroke: "2px var(--accent)", color: "transparent" },
   glitchLayer: { position: "absolute", top: 0, left: 0, width: "100%", height: "100%" },
-  heroSub: { fontSize: "1.15rem", color: "var(--text)", maxWidth: 600, marginBottom: "2.5rem" },
-  heroStats: { display: "flex", gap: "3rem", flexWrap: "wrap" },
+  heroSub: { fontSize: "clamp(1.2rem, 3vw, 2.2rem)", color: "var(--text)", maxWidth: "55ch", marginBottom: "2.5rem", lineHeight: 1.35 },
+  heroStats: { display: "flex", gap: "3rem", flexWrap: "wrap", marginBottom: "1rem" },
   heroStat: { borderLeft: "2px solid var(--accent)", paddingLeft: "1rem" },
   statNumber: { fontFamily: display, fontSize: "2.5rem", color: "var(--white)", lineHeight: 1 },
   statLabel: { fontFamily: mono, fontSize: "0.65rem", color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: "0.15em" },
