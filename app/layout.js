@@ -23,6 +23,9 @@ export const metadata = {
   title: "FOMO Protocol — Decentralized Clearing",
   description:
     "A dual-chain architecture that nets bilateral obligations at scale. No asset custody. No oracles. Pure deterministic clearing.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
