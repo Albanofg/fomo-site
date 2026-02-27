@@ -30,13 +30,14 @@ export default function CTA() {
             <div className="flex gap-6 justify-center flex-wrap">
               <button
                 onClick={() => setModalOpen(true)}
-                className="font-mono text-xs md:text-base tracking-[0.15em] uppercase py-[1.1rem] px-8 md:px-14 bg-accent text-bg font-bold border-none cursor-pointer transition-all duration-300"
+                className="group relative font-mono text-xs md:text-base tracking-[0.15em] uppercase py-[1.1rem] px-8 md:px-14 bg-[#00ffaa] text-bg font-bold border-none cursor-pointer transition-all duration-[350ms] hover:bg-[#00b276] hover:text-[#eaf2ff] hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(0,255,170,0.3)]"
                 style={{
                   clipPath:
                     "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))",
                 }}
               >
                 Request Membership &rarr;
+                <span className="absolute left-0 bottom-0 h-[2px] bg-[#eaf2ff] w-0 group-hover:w-full transition-[width] duration-[350ms]" />
               </button>
             </div>
           </Reveal>
